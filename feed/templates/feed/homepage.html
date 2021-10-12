@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+{% for post in posts %}
+{{post.title}}
+<br>
+{{post.date}}
+<hr>
+{% empty %}
+<h2>This is Empty</h2>
+{% endfor %}
+
+{% endblock %}
