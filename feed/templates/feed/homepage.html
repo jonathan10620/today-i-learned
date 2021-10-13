@@ -1,14 +1,9 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
+
+{% block title %}Changed the title of the homepage{% endblock %}
 
 {% block body %}
-
-{% for post in posts %}
-{{post.title}}
-<br>
-{{post.date}}
-<hr>
-{% empty %}
-<h2>This is Empty</h2>
-{% endfor %}
-
+    {% for post in posts %}
+        {% include "includes/post.html" with post=post show_detail_link=True %}
+    {% endfor %}
 {% endblock %}
